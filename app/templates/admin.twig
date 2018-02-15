@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ 'Admin ~ ' ~ parent() }}{% endblock %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  <link rel="stylesheet" href="assets/admin.css">
+{% endblock %}
+
+{% block script %}
+  {{ parent() }}
+  <script src="assets/admin.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="three columns">
+      <div class="header">
+        <h1>{{ app.title }}</h1>
+        <h2>Admin area</h2>
+      </div>
+      <hr>
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="admin">Dashboard</a>
+          </li><li>
+            <a href="admin/category">Category</a>
+          </li><li>
+            <a href="admin/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nine columns">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

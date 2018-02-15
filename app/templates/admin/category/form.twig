@@ -1,0 +1,19 @@
+{% extends 'admin.twig' %}
+
+{% block title %}{{ title ~ ' ~ ' ~ parent() }}{% endblock %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  {% if action_message %}
+    <div class="alert warning">
+      {{ action_message|raw }}
+    </div>
+  {% endif %}
+
+  <form method="POST">
+    <label for="category">Category</label>
+    <input type="text" class="u-full-width" name="category" id="category" placeholder="Category" value="{{ category.category }}">
+    <button type="submit" class="button-primary">Save</button>
+  </form>
+{% endblock %}

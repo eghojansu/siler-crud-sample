@@ -1,0 +1,17 @@
+.content
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.content h1
+{
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .content
+  {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}

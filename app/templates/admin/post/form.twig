@@ -1,0 +1,35 @@
+{% extends 'admin.twig' %}
+
+{% block title %}{{ title ~ ' ~ ' ~ parent() }}{% endblock %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  {% if action_message %}
+    <div class="alert warning">
+      {{ action_message|raw }}
+    </div>
+  {% endif %}
+
+  <form method="POST">
+    <label for="title">Title</label>
+    <input type="text" class="u-full-width" name="title" id="title" placeholder="Post Title" value="{{ post.title }}">
+    <label for="content">Content</label>
+    <textarea class="u-full-width" name="content" id="content" placeholder="Post Content">{{ post.content }}</textarea>
+    <div class="row">
+      <div class="six columns">
+        <label for="categories[]">Category</label>
+        <select name="categories[]" id="categories[]" multiple class="u-full-width">
+          {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.category }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="six columns">
+        <label for="created_at">Created At</label>
+        <input type="text" class="u-full-width" name="created_at" id="created_at" placeholder="YYYY-MM-DD HH:mm:ss" value="{{ post.created_at }}">
+      </div>
+    </div>
+    <button type="submit" class="button-primary">Save</button>
+  </form>
+{% endblock %}

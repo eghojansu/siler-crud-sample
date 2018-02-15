@@ -1,0 +1,12 @@
+.login
+{
+  max-width: 320px;
+  margin: 50px auto;
+  border: solid 1px #eee;
+  padding: 10px;
+}
+
+.login-message
+{
+  min-height: 50px;
+}

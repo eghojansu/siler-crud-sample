@@ -1,0 +1,28 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ 'Login' }}{% endblock %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  <link rel="stylesheet" href="assets/login.css">
+{% endblock %}
+
+{% block body %}
+  <div class="login">
+    <p>Login with your credentials.</p>
+    <div class="login-message">
+      {% if error %}
+        <div class="alert error">
+          {{ error }}
+        </div>
+      {% endif %}
+    </div>
+    <form method="POST">
+      <label for="username">Username</label>
+      <input type="text" class="u-full-width" name="username" id="username" placeholder="Username">
+      <label for="password">Password</label>
+      <input type="password" class="u-full-width" name="password" id="password" placeholder="Password">
+      <button class="button-primary">Login</button>
+    </form>
+  </div>
+{% endblock %}

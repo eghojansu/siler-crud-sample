@@ -1,0 +1,37 @@
+{% extends 'admin.twig' %}
+
+{% block title %}{{ 'Category ~ ' ~ parent() }}{% endblock %}
+
+{% block content %}
+  <p>Categories</p>
+
+  {% if action_message %}
+    <div class="alert success">
+      {{ action_message|raw }}
+    </div>
+  {% endif %}
+  <div class="clearfix">
+    <a class="button button-primary" href="admin/category/create">New Category</a>
+  </div>
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ category.category }}</td>
+          <td>
+            <a class="button small m0" href="admin/category/edit/{{ category.id }}">Edit</a>
+            <a class="button small m0" href="admin/category/delete/{{ category.id }}" data-action="delete">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

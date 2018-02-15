@@ -1,0 +1,20 @@
+{
+    "name": "eghojansu/siler-crud-sample",
+    "description": "Simple crud built with Siler",
+    "type": "project",
+    "author": [{
+        "name": "Eko Kurniawan",
+        "email": "ekokurniawanbs@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.1",
+        "twig/twig": "^2.4",
+        "leocavalcante/siler": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            "app/app.php",
+            "app/db.php"
+        ]
+    }
+}

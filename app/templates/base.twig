@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="{{ base }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Eko Kurniawan">
+  <meta name="description" content="Blog Siler based CRUD sample">
+  <meta name="keyword" content="siler, blog, crud">
+  <title>{% block title %}{{ app.title }}{% endblock %}</title>
+  {% block stylesheet -%}
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="assets/skeleton.css">
+  <link rel="stylesheet" href="assets/base.css">
+  {%- endblock %}
+</head>
+<body>
+  {% block body %}{% endblock %}
+
+  <div class="benchmark">
+    <em>
+      Built with Siler and Twig template engine, ellapsed time {{ record('start', true)|number_format(5) }} seconds
+      {% if debug %}(DEBUG ENABLED){% endif %}
+    </em>
+  </div>
+
+  {% block script %}
+  <script src="assets/jquery-3.3.1.min.js"></script>
+  {% endblock %}
+</body>
+</html>

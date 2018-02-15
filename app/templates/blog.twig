@@ -1,0 +1,35 @@
+{% extends 'base.twig' %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  <link rel="stylesheet" href="assets/blog.css">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="four columns">
+      <div class="header">
+        <h1>{{ app.title }}</h1>
+        <h2>{{ app.desc|replace({'with':'with<br>'})|raw }}</h2>
+      </div>
+      <hr>
+      <div class="nav">
+        {% set about = path starts with '/about' %}
+        <ul>
+          <li>
+            <a class="{{ not about ? 'active ': '' }}" href="">Home</a>
+          </li><li>
+            <a class="{{ about ? 'active' : '' }}" href="about">About</a>
+          </li><li>
+            <a href="//github.com/eghojansu/siler-crud">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="eight columns">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

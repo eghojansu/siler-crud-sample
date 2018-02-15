@@ -1,0 +1,52 @@
+body
+{
+  padding-bottom: 70px;
+}
+
+.benchmark
+{
+  padding: 5px 10px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #999;
+  color: #eee;
+}
+
+.alert
+{
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+.alert.success
+{
+  border: solid 1px green;
+  background: palegreen;
+  color: #333;
+}
+.alert.warning
+{
+  border: solid 1px orange;
+  background: khaki;
+  color: #333;
+}
+.alert.error
+{
+  border: solid 1px darkred;
+  background: lightcoral;
+  color: #fefefe;
+}
+
+.button.small
+{
+  font-size: smaller;
+  line-height: 24px;
+  height: 24px;
+  padding: 0 15px;
+}
+
+.m0
+{
+  margin: 0;
+}
